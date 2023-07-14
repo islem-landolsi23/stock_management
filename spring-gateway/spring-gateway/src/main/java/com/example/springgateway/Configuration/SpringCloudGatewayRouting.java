@@ -15,6 +15,11 @@ public class SpringCloudGatewayRouting {
         return builder.routes().route("Counties",r->r.path("/Counties/**")
                 .uri("lb://Country-Client"))
                 .route("Client",r->r.path("/Client/**").uri("lb://Client-Service"))
+
+                .route("/Produit",r->r.path("/Produit/**").uri("lb://Produit-Service"))
+
+                .route("/API/GestionCommande",r->r.path("/API/GestionCommande/**").uri("lb://demo"))
+
                 .build();
     }
 }
