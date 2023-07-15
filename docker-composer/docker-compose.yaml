@@ -51,3 +51,15 @@ services:
       eureka.client.serviceUrl.defaultZone: http://eureka-server:8888/eureka/
     depends_on:
       - eureka-server
+  Communication:
+    image: mscommunication
+    restart: always
+    ports:
+      - '9090:9090'
+    environment:
+      SPRING_DATASOURCE: jdbc:h2:mem:testdb
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: sa
+      eureka.client.serviceUrl.defaultZone: http://eureka-server:8888/eureka/
+    depends_on:
+      - eureka-server
