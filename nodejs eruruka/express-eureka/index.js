@@ -2,7 +2,9 @@ const express = require('express');
 const Eureka = require('eureka-js-client').Eureka;
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 ///////////////////////////mongoose ///////////////////////////
 
@@ -56,7 +58,11 @@ app.use('/category', categoryRouter);
 
 
 
-
+app.use(cors({
+  origin: 'http://localhost:4200', // Replace with your Angular application's URL
+  methods: ['GET', 'POST'], // Specify allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'] // Specify allowed headers
+}));
 
 
 
