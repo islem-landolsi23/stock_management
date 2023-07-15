@@ -22,7 +22,7 @@ mongoose.connect('mongodb://localhost:27017/mydatabase', { useNewUrlParser: true
 ///////////////////// client eureka //////////////////////
 const client = new Eureka({
     instance: {
-      app: 'eureka',
+      app: 'category',
       hostName: 'localhost',
       ipAddr: '127.0.0.1',
       port: {

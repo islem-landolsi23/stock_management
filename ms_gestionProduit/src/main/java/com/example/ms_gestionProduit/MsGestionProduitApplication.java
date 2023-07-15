@@ -23,8 +23,9 @@ public class MsGestionProduitApplication {
 	ApplicationRunner start(ProduitRepository repo) {
 		return
 				args -> {
-					Stream.of(new Produit("Harissa", 2, 500 , 1200),
-									new Produit("ketchup" , 3 , 120 , 350))
+					Stream.of(new Produit("Harissa", 2, 500 , 1200,1),
+									new Produit("ketchup" , 3 , 120 , 350,1),
+							new Produit("coat" , 3 , 120 , 350,2))
 							.forEach(
 									candidat -> {
 										repo.save(candidat);

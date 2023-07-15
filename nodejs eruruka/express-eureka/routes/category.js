@@ -30,5 +30,15 @@ router.post('/add', (req, res) => {
         res.status(500).send('An error occurred');
       });
   });
+  router.delete('/All', (req, res) => {
+    Category.deleteMany({})
+      .then((category) => {
+        res.send("deleted");
+      })
+      .catch((error) => {
+        console.error('Error retrieving category:', error);
+        res.status(500).send('An error occurred');
+      });
+  });
   
   module.exports = router;
