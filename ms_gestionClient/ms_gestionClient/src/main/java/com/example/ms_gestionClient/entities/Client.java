@@ -28,9 +28,9 @@ public class Client implements Serializable {
 	@Temporal(TemporalType.DATE)
 	private Date  dateNaissance;
 	private String email;
-	private String password;
 
-	public Client(String nom, String prenom , String mail){
+
+	public Client(String nom, String prenom , String email){
 		this.nom=nom;
 		this.prenom=prenom;
 		this.email=email;

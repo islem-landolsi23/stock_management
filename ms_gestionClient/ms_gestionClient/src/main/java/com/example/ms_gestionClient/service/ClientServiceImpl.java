@@ -12,12 +12,12 @@ public class ClientServiceImpl implements IClientService {
 	@Autowired
 	ClientRepsitory repo;
 	@Override
-	public Client addCandidat(Client c) {
+	public Client addClient(Client c) {
 		return repo.save(c);
 	}
 
 	@Override
-	public List<Client> getCandidats() {
+	public List<Client> getClients() {
 		return repo.findAll();
 	}
 

@@ -14,9 +14,9 @@ public class ClientController {
 	@Autowired
 	IClientService canService;
 	@PostMapping("/AddClient")
-	public Client addCandidat(@RequestBody Client c)
+	public Client addClient(@RequestBody Client c)
 	{
-		return canService.addCandidat(c);
+		return canService.addClient(c);
 	}
 	
 	@GetMapping("/getOne/{id}")
@@ -27,11 +27,11 @@ public class ClientController {
 	
 	@GetMapping("/getAll")
 	public List<Client> getAll(){
-		return canService.getCandidats();
+		return canService.getClients();
 	}
 
 	@GetMapping("/hello")
 	public String hello(){
-		return "hello islem";
+		return "hello";
 	}
 }
