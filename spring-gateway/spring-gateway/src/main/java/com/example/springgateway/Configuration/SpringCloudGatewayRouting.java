@@ -11,7 +11,7 @@ public class SpringCloudGatewayRouting {
     @Bean
     public RouteLocator configureRoute(RouteLocatorBuilder builder)
     {
-        // .route("invitation-manager",r->r.path("/invites/**").uri("lb://invitation-management"))
+       
         return builder.routes().route("Counties",r->r.path("/Counties/**")
                 .uri("lb://Country-Client"))
                 .route("Client",r->r.path("/Client/**").uri("lb://Client-Service"))
