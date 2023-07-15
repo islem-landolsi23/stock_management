@@ -20,7 +20,7 @@ public class SpringCloudGatewayRouting {
 
                 .route("/API/GestionCommande",r->r.path("/API/GestionCommande/**").uri("lb://demo"))
                 .route("category",r->r.path("/category/**").uri("lb://category"))
-                .routes().route("Communication",r->r.path("/Communication/**")
+                .route("Communication",r->r.path("/Communication/**")
                 .uri("lb://Communication"))
 
                 .build();
