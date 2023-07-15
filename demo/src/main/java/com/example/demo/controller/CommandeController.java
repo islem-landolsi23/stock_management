@@ -28,5 +28,11 @@ public class CommandeController {
     public String HelloWorld(){
         return "Hello World";
     }
+
+
+    @GetMapping("/getOne/{id}")
+    public Commande getOne(@PathVariable("id") Long id){
+        return commandeService.getById(id);
+    }
 }
 

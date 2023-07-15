@@ -1,6 +1,8 @@
 package com.example.demo;
 
 import com.example.demo.entity.Candidat;
+import com.example.demo.entity.Commande;
+import com.example.demo.repository.ICommandeRepository;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,13 +22,13 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
     @Bean
-    ApplicationRunner start(ICandidateRepository repo){
+    ApplicationRunner start(ICommandeRepository repo){
         return args -> {
-            Stream.of(new Candidat(1L,"Rihab","idoudi",new Date(),"rihab@","qsd"),
-                    new Candidat(2L,"Rihabhhhh","idoudi",new Date(),"rihab@","qsd"))
+            Stream.of(new Commande(1L,"Food","aaaa",new Date(),true),
+                    new Commande(1L,"TV","bbbb",new Date(),false))
                         .forEach(
-                            candidat -> {
-                            repo.save(candidat);});
+                            commande -> {
+                            repo.save(commande);});
                     repo.findAll().forEach(System.out::println);
     };
 
